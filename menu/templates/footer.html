@@ -1,0 +1,54 @@
+{% load static i18n %}
+{% for x in restaurants %}
+ <footer class="site-footer section-padding">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-12">
+                        <h4 class="text-white mb-4 me-5">{{x.name}}</h4>
+                    </div>
+
+                    <div class="col-lg-4 col-md-7 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Location</h6>
+
+                        <p>{{x.location}}</p>
+
+                    </div>
+
+                    <div class="col-lg-4 col-md-5 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Açılış-Kapanış Saatleri</h6>
+
+                        <p class="mb-2">{{x.day}} - {{x.dayend}}</p>
+
+                        <p>07:00 AM - 11:00 PM</p>
+
+                        <p>Tel: <a href="tel: 010-02-0340" class="tel-link">{{x.phone}}</a></p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Sosyal Ağlar</h6>
+
+                        <ul class="social-icon">
+                            <li><a href="{{x.facebook}}" target="_blank" class="social-icon-link bi-facebook"></a></li>
+
+                            <li><a href="{{x.instagram}}" target="_blank" class="social-icon-link bi-instagram"></a></li>
+
+                            <li><a href="{{x.twitter}}" target="_blank"
+                            	 class="social-icon-link bi-twitter"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                        </ul>
+
+                        <p class="copyright-text tooplate-mt60">Copyright © 2022 Central Web Agency.
+                        <br>Design: <a rel="nofollow" href="www.centralwebagency.com" target="_blank">CWA</a></p>
+
+                    </div>
+
+                </div><!-- row ending -->
+
+             </div><!-- container ending -->
+
+        </footer>
+{% endfor %}

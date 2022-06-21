@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% load static i18n %}
+
+
+
+{% block seo %}
+
+
+<title>QR Menü</title>
+
+<meta name="description" content="?" />
+
+<meta name="keywords" content="?" />
+
+<link rel="canonical" href="?"/>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+<meta name="robots" content="index,follow"/>
+
+
+{% endblock %}
+
+
+
+{% block content %}
+<main>
+     <header class="site-header site-menu-header">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-10 col-12 mx-auto">
+                            <h1 class="text-white">Our Menus</h1>
+
+                            <strong class="text-white">Perfect for all Breakfast, Lunch and Dinner</strong>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="overlay"></div>
+            </header>
+
+    <section class="menu section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h2 class="text-center mb-lg-5 mb-4">Menü</h2>
+                        </div>
+                        {% for x in category %}
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="menu-thumb">
+                                <div class="menu-image-wrap">
+                                    <a href="{{ x.get_absolute_url }}">
+                                    <img src="{% if x.image %}{{ x.image.url }}{% else %}{% endif %}" class="img-fluid menu-image" alt="">
+                                     </a>
+                                    <span class="menu-tag bg-warning">{{x.name}}</span>
+                                    <!--span class="menu-tag bg-warning">Breakfast</span-->
+                                </div>
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <a href="{{ x.get_absolute_url }}">
+                                    <h4 class="mb-0">{{x.name}} | {% trans 'İncele' %}</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="BgImage"></section>
+</main>
+{% endblock %}
+
+{% for x in category %}
+            <div class="Burger_President_here">
+                <div class="single_Burger_President">
+                    <div class="room_thumb">
+                        <img width="400" height="300" src="{% if x.image %}{{ x.image.url }}{% else %}{% endif %}" alt="">
+                        <div class="room_heading d-flex justify-content-between align-items-center">
+                            <div class="room_heading_inner">
+                                <h3>{{x.name}}</h3>
+                                <p>{{x.info}} ,<br> Otuz Beş...</p>
+                                <a href="{{x.get_absolute_url}}" class="boxed-btn3">Daha Fazlası</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+         {% endfor %}
+
+
+
+
+
+
+
+
+
+
