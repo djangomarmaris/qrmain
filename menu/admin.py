@@ -18,8 +18,8 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['id','slug','category','price','available']
-    list_editable = ['price','available']
+    list_display = ['id','slug','category','price']
+    #list_editable = ['price','available']
     prepopulated_fields = {'slug':('name',)}
 
 
@@ -35,4 +35,4 @@ admin.site.register(Product,ProductAdmin)
 admin.site.register(Restaurant,RestaurantAdmin)
 
 
-admin.site.site_header = 'Datça QR / Developer @ İhsan Gürol Demirtaş'
+admin.site.site_header = 'CK GURME QR'
